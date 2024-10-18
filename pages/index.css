@@ -2,4 +2,6 @@
 
 body {
     background-color: rgb(24, 24, 24);
+    width: 100vw;
+    height: 100vh;
 }
