@@ -15,44 +15,44 @@ body {
     height: 100vh;
     font-family: 'Helvetica Neue', Helvetica, Tahoma, Verdana, sans-serif;
     color: white;
-    padding: 2rem;
+    padding: 4rem 2rem;
     display: flex;
     flex-flow: column nowrap;
+    justify-content: space-between;
     gap: 5rem;
 }
 
 h1 {
     font-size: 1.2rem;
+    padding: 1rem 0;
+    border-top: 1px solid #fff9;
+    border-bottom: 1px solid #fff6;
 }
 
 h1 span {
     padding: 1rem 0;
     margin-right: 2rem;
+    border-top: 1px solid white;
     border-bottom: 1px solid white;
+}
+
+#content-container {
+    width: 100%;
+    padding: calc(1rem + 1vw);
 }
 
 #content {
     width: 100%;
-    border-top: 1px solid white;
-    padding: 1.5rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
-    gap: 1rem;
 }
 
-#chart-a {
-    grid-column: 0;
-    grid-row: 0;
-    width: 100%;
-    border: 1px solid white;
-    padding: 1rem;
-}
-
-#chart-b {
-    grid-column: 0;
-    grid-row: 0;
-    width: 100%;
-    border: 1px solid white;
-    padding: 1rem;
+#snapshots-button {
+    width: auto;
+    height: 2rem;
+    padding: 0.3rem 1rem;
+    border: 1px solid #fff9;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    border-radius: 5px;
+    cursor: pointer;
 }
