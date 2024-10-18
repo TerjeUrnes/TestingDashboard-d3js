@@ -10,7 +10,7 @@ html {
 }
 
 body {
-    background-color: rgb(24, 24, 24);
+    background-color: #1c1413;
     width: 100vw;
     height: 100vh;
     font-family: 'Helvetica Neue', Helvetica, Tahoma, Verdana, sans-serif;
@@ -26,15 +26,14 @@ h1 {
 }
 
 h1 span {
-    background-color: rgb(59, 68, 75);
-    padding: 1rem;
-    margin-right: 0.25rem;
-    border-radius: 3px;
+    padding: 1rem 0;
+    margin-right: 2rem;
+    border-bottom: 1px solid white;
 }
 
 #content {
     width: 100%;
-    border: 1px solid rgb(59, 68, 75);
+    border-top: 1px solid white;
     padding: 1.5rem;
     display: grid;
     grid-template-columns: 1fr 1fr;

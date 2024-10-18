@@ -4,3 +4,5 @@ Dashboard address: [https://terjeurnes.github.io/TestingDashboard-d3js/](https:/
 D3 version 7
 
 # TestingDashboard-d3js
+
+Diary / Log: [DIARY.md](./assets/DIARY.md)
