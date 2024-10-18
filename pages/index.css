@@ -1,7 +1,59 @@
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+}
 
 body {
     background-color: rgb(24, 24, 24);
     width: 100vw;
     height: 100vh;
+    font-family: 'Helvetica Neue', Helvetica, Tahoma, Verdana, sans-serif;
+    color: white;
+    padding: 2rem;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 5rem;
+}
+
+h1 {
+    font-size: 1.2rem;
+}
+
+h1 span {
+    background-color: rgb(59, 68, 75);
+    padding: 1rem;
+    margin-right: 0.25rem;
+    border-radius: 3px;
+}
+
+#content {
+    width: 100%;
+    border: 1px solid rgb(59, 68, 75);
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 1rem;
+}
+
+#chart-a {
+    grid-column: 0;
+    grid-row: 0;
+    width: 100%;
+    border: 1px solid white;
+    padding: 1rem;
+}
+
+#chart-b {
+    grid-column: 0;
+    grid-row: 0;
+    width: 100%;
+    border: 1px solid white;
+    padding: 1rem;
 }
