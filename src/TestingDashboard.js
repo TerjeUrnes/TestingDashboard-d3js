@@ -5,7 +5,7 @@ import { Layout } from "./layout/layout.js";
 
 export class TestingDashboard {
 
-    _dataFilePath = "../data/gapminder.csv";
+    _dataFilePath = "data/gapminder.csv";
 
     _dataLink;
     _scatterPlot;
