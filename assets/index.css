@@ -1,4 +1,11 @@
 
+:root {
+    --background-color: #f6ebea;
+    --header-color: #a9b4bc;
+    --header-color-transparent: #a9b4bc66;
+    --front-color: #151a1e;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -10,11 +17,11 @@ html {
 }
 
 body {
-    background-color: #1c1413;
+    background-color: var(--background-color);
     width: 100vw;
     height: 100vh;
     font-family: 'Helvetica Neue', Helvetica, Tahoma, Verdana, sans-serif;
-    color: white;
+    color: var(--front-color);
     padding: 4rem 2rem;
     display: flex;
     flex-flow: column nowrap;
@@ -23,17 +30,19 @@ body {
 }
 
 h1 {
+    display: inline;
     font-size: 1.2rem;
-    padding: 1rem 0;
-    border-top: 1px solid #fff9;
-    border-bottom: 1px solid #fff6;
+    padding: 1rem 2rem 1rem 0;
+    border-top: 1px solid var(--header-color-transparent);
+    border-bottom: 1px solid var(--header-color-transparent);
 }
 
 h1 span {
     padding: 1rem 0;
     margin-right: 2rem;
-    border-top: 1px solid white;
-    border-bottom: 1px solid white;
+    color: var(--header-color);
+    border-top: 1px solid var(--header-color);
+    border-bottom: 1px solid var(--header-color);
 }
 
 #content-container {
@@ -44,15 +53,24 @@ h1 span {
 #content {
     width: 100%;
     display: grid;
+    gap: 1rem;
+}
+
+.chart {
+    width: 100%;
+    font-weight: normal;
+}
+
+.chart svg {
+    width: 100%;
+    height: auto;
 }
 
 #snapshots-button {
     width: auto;
     height: 2rem;
     padding: 0.3rem 1rem;
-    border: 0.5px solid #fff9;
-    border-top: 0.5px solid white;
-    border-bottom: 0.5px solid white;
+    border: 0.5px solid var(--front-color);
     border-radius: 5px;
     cursor: pointer;
 }

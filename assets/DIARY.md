@@ -12,3 +12,5 @@
 
 ![uml](./diagrams/uml01.drawio.svg)
 
+[https://medium.com/@aryakvn/emitting-events-from-custom-classes-in-javascript-ea635d8023c6](https://medium.com/@aryakvn/emitting-events-from-custom-classes-in-javascript-ea635d8023c6)
+
