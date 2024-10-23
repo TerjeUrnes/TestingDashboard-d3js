@@ -1,4 +1,5 @@
 import { ScatterPlot } from "./charts/scatterplot.js";
+import { Timeline } from "./charts/timeline.js";
 import { DataLink } from "./data/datalink.js";
 import { Layout } from "./layout/layout.js";
 
@@ -24,10 +25,12 @@ export class TestingDashboard {
         this._dataLink = new DataLink();
         this._scatterPlot = new ScatterPlot(this._dataLink);
         this._scatterPlot2 = new ScatterPlot(this._dataLink);
+        const timeline = new Timeline(this._dataLink);
         this._layout = new Layout();
-        this._layout.MakeLayout([this._scatterPlot, this._scatterPlot2]);
+        this._layout.MakeLayout([this._scatterPlot, this._scatterPlot2, timeline]);
         //this._scatterPlot.UpdateChart();
         //this._scatterPlot2.UpdateChart();
+        
     }
 
     LoadData() {

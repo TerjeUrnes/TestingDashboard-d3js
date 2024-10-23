@@ -13,28 +13,51 @@ export class Layout {
     }
 
     MakeLayout(objects) {
-        const count = objects.length;
-        this._baseElm.style.gridTemplateColumns = `repeat(${count}, 1fr)`;
-        this._baseElm.style.gridTemplateRows = "*";
 
-        for (let i = 0; i < count; i++) {
-            const element = document.createElement("div");
-            element.classList.add("chart");
+        this._baseElm.style.gridTemplateColumns = "1fr 1fr";
+        this._baseElm.style.gridTemplateRows = "1fr 120px";
 
-            element.style.gridRow = "1";
-            element.style.gridColumnStart = `${i + 1}`;
-            element.style.gridColumnEnd = `${i + 2}`;
-            element.style.width = "100%";
-            this._baseElm.appendChild(element);
+        this.AddChart({
+            obj: objects[0],
+            rowStart: 1,
+            rowEnd: 2,
+            colStart: 1,
+            colEnd: 2
+        });
 
-            const width = element.clientWidth * 2;
-            console.log(width);
-            objects[i].Width = width;
+        this.AddChart({
+            obj: objects[1],
+            rowStart: 1,
+            rowEnd: 2,
+            colStart: 2,
+            colEnd: 3
+        });
 
-            const svg = objects[i].Svg;
-            element.appendChild(svg);
-            
-        }
+        this.AddChart({
+            obj: objects[2],
+            rowStart: 2,
+            rowEnd: 3,
+            colStart: 1,
+            colEnd: 3
+        });
+    }
+
+    AddChart(chart) {
+        const element = document.createElement("div");
+        element.classList.add("chart");
+
+        element.style.gridRowStart = chart.rowStart;
+        element.style.gridRowEnd = chart.rowEnd;
+        element.style.gridColumnStart = chart.colStart;
+        element.style.gridColumnEnd = chart.colEnd;
+        this._baseElm.appendChild(element);
+
+        const width = element.clientWidth;
+        const height = element.clientHeight;
+        const rect = element.getBoundingClientRect()
+        chart.obj.SetSize(rect.width, rect.height);
+
+        element.appendChild(chart.obj.Svg);
     }
 
 }

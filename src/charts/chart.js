@@ -12,24 +12,15 @@ export class Chart {
         return this._d3Context.node();
     }
 
-    set Width(width) {
-        this._width = width;
-        this._d3Context.attr("width", this._width);
-        this._d3Context.attr("viewBox", [0, 0, this._width, this._height]);
-        this.SetupD3Context();
-        this.UpdateChart();
-    }
-
     constructor(dataLink){
         this._dataLink = dataLink;
-        this._dataLink.addEventListener("dataLoaded", this.LoadedData.bind(this));
-        this._width = 640;
-        this._height = 480;
+        this._width = 10;
+        this._height = 10;
         this.SetupD3Context();
     }
 
-    LoadedData(e) {
-        this._data = e.data;
+    LoadedData() {
+        this._data = this._dataLink.Data;
         this.UpdateChart();
     }
 
@@ -41,7 +32,12 @@ export class Chart {
             .attr("viewBox", [0, 0, this._width, this._height]);
     }
 
-    GetSvg() {
-        this._d3Context.node();
+    SetSize(width, height) {
+        this._width = width;
+        this._height = height;
+        this._d3Context.attr("width", this._width)
+            .attr("height", this._height)
+            .attr("viewBox", [0, 0, this._width, this._height]);
+        this.UpdateChart();
     }
 }
